@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Redirect</title>
+
+<script>
+function gerarExternalId(tamanho = 30) {
+    const chars = "abcdef0123456789";
+    let resultado = "";
+    for (let i = 0; i < tamanho; i++) {
+        resultado += chars[Math.floor(Math.random() * chars.length)];
+    }
+    return resultado;
+}
+
+(function () {
+    const externalId = gerarExternalId();
+    const destino = "upsell4/?externalId=" + externalId;
+    window.location.replace(destino);
+})();
+</script>
+
+</head>
+<body>
+</body>
+</html>
